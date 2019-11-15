@@ -32,8 +32,6 @@ class App extends Component {
     console.log(this.state);
     let form_data = new FormData();
     form_data.append('file', this.state.file, this.state.file.name);
-    form_data.append('title', this.state.title);
-    form_data.append('content', this.state.content);
     let url = 'http://localhost:8000/api/posts/';
     axios.post(url, form_data, {
       headers: {
@@ -53,26 +51,20 @@ class App extends Component {
   	const isLoaded = this.state.isLoaded;
   	let button;
   	if (isLoaded) {
-  	      button = <div><a href={"https://compartiment-thimothe.s3.eu-west-3.amazonaws.com/" + 'export' + this.state.file.name.replace(/ /g, "_")} download>Click to download</a></div>;
+  	      button = <div><button className="btn-download"><a href={"https://compartiment-thimothe.s3.eu-west-3.amazonaws.com/" + 'export' + this.state.file.name.replace(/ /g, "_")} download>Download</a></button></div>;
   	    } else {
   	      button = <div><p>File not loaded</p></div>;
   	    }
     return (
       <div className="App">
         <form onSubmit={this.handleSubmit}>
-          <p>
-            <input type="text" placeholder='Title' id='title' value={this.state.title} onChange={this.handleChange} required/>
-          </p>
-          <p>
-            <input type="text" placeholder='Content' id='content' value={this.state.content} onChange={this.handleChange} required/>
 
-          </p>
           <p>
-            <input type="file"
+            <input className="drop" type="file"
                    id="image"
                    accept=".csv, application/vnd.ms-excel"  onChange={this.handleImageChange} required/>
           </p>
-          <input type="submit"/>
+          <input type="submit" value="Load"/>
          {button}
         </form>
 
