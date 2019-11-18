@@ -11,20 +11,22 @@ Boto3<br />
 xlwt<br />
 
 ## Backend 
-<br />
+
 localhost:8000/admin --> Interface admin de django <br />
 <br />
 localhost:3000 --> Front end<br />
 
 Start server : <br />
-cd backend<br />
-python manage.py runserver<br />
+`cd backend`<br />
+`python manage.py runserver`<br />
 
 ## Mise en ligne
 
 Heroku (Build automatiquement le front end)<br />
 Lien de l'application : https://django-react-t.herokuapp.com/<br />
 
+## Hebergement des fichiers xls :
+AWS S3 
 
 ## Available Scripts
 
