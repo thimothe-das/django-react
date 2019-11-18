@@ -10,7 +10,6 @@ import boto3
 from pandas import DataFrame, read_csv, ExcelWriter
 import pandas as pd
 import xlwt
-import re
 # Create your views here.
 
 class PostView(APIView):
@@ -35,34 +34,24 @@ class PostView(APIView):
             df = pd.read_excel('./file/post_images/' + file_realnames, sheet_name='BAREME-MEASUREMENT CHART', header=1)
             df = df.drop(df.columns[[2]], axis=1)
             df = df.iloc[:, :-8]
-            print(file_name)
-            cheval = re.search(r'1002\d{3}', file_name)
-            if cheval:
-                print('est la mais devrais pas')
-                searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
-                 'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
-                 'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
+           
+            if file_name.startswith('01001-5934') == True:
+                searchfor = ['Tour de poitrine', 'Tour de taille', 'Longueur de manche ML', '65cm']
 
-            elif '1002827' in file_name or '1002781' in file_name:
-                print('est la aussi')
-                searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
-                 'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
-                 'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
+            elif file_name.startswith('01804-8230') == True:
+                searchfor = ['Tour de taille étirée', 'Tour de taille', 'Tour de bassin', '1/2 Tour de  cuisse à 2.5cm', 'Longueur d\'entrejambe']
 
-            elif '1002827' in file_name or '1002781' in file_name:
-                print('est la aussi')
-                searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
-                 'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
-                 'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
+            elif file_name.startswith('00400-0270') == True:
+                searchfor = ['1/2 Tour de poitrine à 2,5 cms\n1/2 Chest', 'Tour de taille', 'Longueur de manche raglan dépliée', '65cm']
 
-            elif '1002827' in file_name or '1002781' in file_name:
-                print('est la aussi')
-                searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
-                 'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
-                 'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
+            elif file_name.startswith('01804-3921') == True:
+                searchfor = ['( elastique à partir du 44)', '1/2 Tour de taille étirée\n1/2 Waistround', '1/2 Tour de bassin\n1/2 Hips round', '1/2 Tour de  cuisse à 2.5cm\n1/2 Thigh round', 'Longueur d\'entrejambe' + '\n' + 'Inleg length']
+
+            elif file_name.startswith('01804-3922') == True:
+                searchfor = ['( elastique à partir du 44)', '1/2 Tour de taille étirée\n1/2 Waistround', '1/2 Tour de bassin\n1/2 Hips round', '1/2 Tour de  cuisse à 2.5cm\n1/2 Thigh round', 'Longueur d\'entrejambe' + '\n' + 'Inleg length']
 
 
-            df = df[df['TAILLES FRANCAISES '].str.contains('|'.join(searchfor), na=False) ]
+            df = df[df['TAILLES FRANCAISES '].str.contains('|'.join(searchfor)) ]
             writer = ExcelWriter('export' + file_realname)
             df.to_excel(writer)
             writer.save()
