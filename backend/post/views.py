@@ -31,45 +31,34 @@ class PostView(APIView):
         if posts_serializer.is_valid():
             posts_serializer.save()
 
-            print('working until here')
+            #Nettoie afin qu'il soit facilement facilement lisible et iterable
             df = pd.read_excel('./file/post_images/' + file_realnames, sheet_name='BAREME-MEASUREMENT CHART', header=1)
             df = df.drop(df.columns[[2]], axis=1)
             df = df.iloc[:, :-8]
-            print(file_name)
-            cheval = re.search(r'1002[45678]\d{2}', file_name)
-            if cheval:
-                print('est la mais devrais pas')
+            match = re.search(r'1002[45678]\d{2}', file_name)
+
+            #Condition utilisé pour récolter les lignes qui nous intéressent ( regex re.search())
+            if match:
                 searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
                  'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
                  'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
 
+            #Seconde façon de faire non utilisé dans le script ( if x in :)
             elif '1002827' in file_name or '1002781' in file_name:
                 print('est la aussi')
                 searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
                  'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
                  'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
 
-            elif '1002827' in file_name or '1002781' in file_name:
-                print('est la aussi')
-                searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
-                 'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
-                 'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
-
-            elif '1002827' in file_name or '1002781' in file_name:
-                print('est la aussi')
-                searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
-                 'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
-                 'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
-
-
+            # Enregistre seulement les lignes recherchées et écrit le tout dans un nouveau fichier xls
             df = df[df['TAILLES FRANCAISES '].str.contains('|'.join(searchfor), na=False) ]
             writer = ExcelWriter('export' + file_realname)
             df.to_excel(writer)
             writer.save()
 
+            #Upload to S3
             s3 = boto3.client('s3')
             bucket_name = 'compartiment-thimothe'
-            print('jusquala')
             s3.upload_file('export' + str(file_realname), bucket_name, 'export' + str(file_realname))
             print('Successfully uploaded')
 
