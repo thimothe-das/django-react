@@ -28,9 +28,11 @@ class PostView(APIView):
         file_name = str(object_dict['file'])
         file_realname = file_name.replace(" ", "_")
         file_realnames = file_realname.replace("̀", "")
+
         if posts_serializer.is_valid():
             posts_serializer.save()
 
+            print(file_realnames)
             #Nettoie afin qu'il soit facilement facilement lisible et iterable
             df = pd.read_excel('./file/post_images/' + file_realnames, sheet_name='BAREME-MEASUREMENT CHART', header=1)
             df = df.drop(df.columns[[2]], axis=1)
