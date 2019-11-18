@@ -36,7 +36,7 @@ class PostView(APIView):
             df = df.drop(df.columns[[2]], axis=1)
             df = df.iloc[:, :-8]
             print(file_name)
-            cheval = re.search(r'1002\d{3}', file_name)
+            cheval = re.search(r'1002[45678]\d{2}', file_name)
             if cheval:
                 print('est la mais devrais pas')
                 searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
