@@ -47,7 +47,6 @@ class PostView(APIView):
 
             #Seconde façon de faire non utilisé dans le script ( if x in :)
             elif '1002827' in file_name or '1002781' in file_name:
-                print('est la aussi')
                 searchfor = ['Hauteur taille - hanche', 'Tour de taille\n1/2 Waist round', 'Tour de bassin\n1/2 Hips round',
                  'Enfourchement dos avec ceinture\n', 'dos avec ceinture' 'cuisse', 'Enfourchement',
                  'Longueur d\'entrejambe', 'Tour de mollet\n', 'Longueur de jambe ( taille-terre)\n']
