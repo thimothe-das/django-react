@@ -64,8 +64,11 @@ class Sql:
 			if str(df.columns[2]).count('Unnamed') > 0:
 				df = df.drop(df.columns[2], axis=1)
 				col_suppresor += 1
-
-			wb = xlrd.open_workbook('./files/' + self.file, formatting_info=1)
+			try:
+				wb = xlrd.open_workbook('./files/' + self.file, formatting_info=1)
+			except:
+				print('xlxs file, should be xls file')
+				continue
 			ws = wb.sheet_by_index(0)
 			self.hidden_rows[self.file] = []
 			try:
@@ -105,7 +108,13 @@ class Sql:
 		for i in range(len(self.df.index)):
 			for n in range(1, len(self.df.columns)):
 				identi = "SELECT id FROM pim_product WHERE model_id IN (SELECT id FROM pim_model WHERE model_number=%s) AND brand_size_id IN (SELECT id FROM pim_brand_size WHERE name=%s)"
-				args = (str(self.match.group()), str(self.df.columns[n]))
+				try:
+					args = (str(self.match.group()), str(self.df.columns[n]))
+				except:
+					print(self.file)
+					print('No file name found')
+					print('//////////////////////////////////')
+					continue
 				self.mycursor.execute(identi, args)
 				myresult = self.mycursor.fetchall()
 				try:
@@ -123,7 +132,7 @@ class Sql:
 
 				for result in range(len(myresult)):
 					try:
-						sql = "INSERT INTO pim_sizeguide_product (id, {0}, created_at, updated_at) VALUES (%s,%s, %s, %s)".format(str(self.names[index_namelist]))
+						sql = "INSERT INTO pim_sizeguide_product (product_id, {0}, created_at, updated_at) VALUES (%s,%s, %s, %s)".format(str(self.names[index_namelist]))
 						val = (
 							myresult[result][0],
 							str(self.df.iloc[i][self.df.columns[n]]*multiplier),
@@ -132,11 +141,13 @@ class Sql:
 							)
 						self.mycursor.execute(sql, val)
 						self.mydb.commit()
+						print('send to db successful')
 
 					except mysql.connector.IntegrityError as e:
-						sql = "UPDATE pim_sizeguide_product SET {0} = {1} WHERE id={2}".format(str(self.names[index_namelist]), str(self.df.iloc[i][self.df.columns[n]]*multiplier), myresult[result][0])
+						sql = "UPDATE pim_sizeguide_product SET {0} = {1} WHERE product_id={2}".format(str(self.names[index_namelist]), str(self.df.iloc[i][self.df.columns[n]]*multiplier), myresult[result][0])
 						self.mycursor.execute(sql)
 						self.mydb.commit()
+						print('send to db successful')
 
 					except mysql.connector.DatabaseError as e:
 						continue
