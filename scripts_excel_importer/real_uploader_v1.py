@@ -42,6 +42,10 @@ class Sql:
 		self.table_name = "pim_brand_size"
 
 	def hidden_remover(self):
+		with open("failed_files" + ".csv", "a", newline='\n') as fp:
+			a = csv.writer(fp)
+			row = ['FILE NAME'] + ['ERROR CODE'] + ['ERROR EXPLAINED'] 
+			a.writerow(row)
 		with open('codelist.txt', 'r') as f:
 			self.identifiants = f.read().splitlines()
 		with open('namelist.txt', 'r') as f:
@@ -66,8 +70,14 @@ class Sql:
 				col_suppresor += 1
 			try:
 				wb = xlrd.open_workbook('./files/' + self.file, formatting_info=1)
-			except:
+			except Exception as e:
 				print('xlxs file, should be xls file')
+				file_error = 'FILE : ' + str(self.file) + ' ERROR CODE : ' +  str(e) + ' ERREUR : ' + 'Wrong file extension, should be xls (not xlxs)'
+				self.failed_file.append(file_error)
+				with open("failed_files" + ".csv", "a", newline='\n') as fp:
+					a = csv.writer(fp)
+					row = [str(self.file)] + [str(e)] + ['Wrong file extension, should be xls (not xlxs)'] 
+					a.writerow(row)
 				continue
 			ws = wb.sheet_by_index(0)
 			self.hidden_rows[self.file] = []
@@ -91,8 +101,6 @@ class Sql:
 				df.rename({df.columns[2]: '38'}, axis=1, inplace=True)
 			else:
 				print('ALERT')
-				self.failed_counter += 1
-				self.failed_file.append(self.file)
 
 			df = df.iloc[:, :-3]
 			df['id'] = self.file
@@ -102,28 +110,49 @@ class Sql:
 			while str(self.df.columns[-1]).count('Unnamed') > 0:
 				self.df = self.df.drop(self.df.columns[-1], axis=1)
 			sql_class.sql_uploader()
-			print(self.file)
 
 	def sql_uploader(self):
 		for i in range(len(self.df.index)):
 			for n in range(1, len(self.df.columns)):
 				identi = "SELECT id FROM pim_product WHERE model_id IN (SELECT id FROM pim_model WHERE model_number=%s) AND brand_size_id IN (SELECT id FROM pim_brand_size WHERE name=%s)"
 				try:
-					args = (str(self.match.group()), str(self.df.columns[n]))
-				except:
+					self.args = (str(self.match.group()), str(self.df.columns[n]))
+				except Exception as e:
 					print(self.file)
 					print('No file name found')
-					print('//////////////////////////////////')
-					continue
-				self.mycursor.execute(identi, args)
+					try:
+						if self.failed_file[-1].count(str(self.file)) > 0:
+							print('error already added to array')
+						else:
+							file_error = 'FILE : ' + str(self.file) + ' ERROR CODE : ' +  str(e) + ' ERREUR : ' + 'Part of file name with 7 numbers not found'
+							self.failed_file.append(file_error)
+							with open("failed_files" + ".csv", "a", newline='\n') as fp:
+								a = csv.writer(fp)
+								row = [str(self.file)] + [str(e)] + ['Part of file name with 7 numbers not found'] 
+								a.writerow(row)
+						continue
+					except IndexError:
+						file_error = 'FILE : ' + str(self.file) + ' ERROR CODE : ' +  str(e) + ' ERREUR : ' + 'Part of file name with 7 numbers not found'
+						self.failed_file.append(file_error)
+						with open("failed_files" + ".csv", "a", newline='\n') as fp:
+							a = csv.writer(fp)
+							row = [str(self.file)] + [str(e)] + ['Part of file name with 7 numbers not found'] 
+							a.writerow(row)
+						continue
+
+				self.mycursor.execute(identi, self.args)
 				myresult = self.mycursor.fetchall()
 				try:
 					index_namelist = self.identifiants.index(str(self.df.iloc[i][self.df.columns[1]]))
 				except Exception as e:
+					print('index issue between filename.txt and codename.txt')
+					print(e)
+
 					continue
 				if len(myresult) > 0:
 					pass
 				else:
+					print("no product_id found")
 					continue
 				if str(self.df.iloc[i][self.df.columns[0]]).count('1/2') > 0:
 					multiplier = 20
@@ -150,24 +179,28 @@ class Sql:
 						print('send to db successful')
 
 					except mysql.connector.DatabaseError as e:
+						print('error : Nan value not sent to DB')
+						print(e)
 						continue
 
 					except ValueError as e:
+						print('value error')
+						print(e)
 						continue
 
 
 	def ender(self):
-		print('Script successfully ended')
 		# print('number of records successulf : ' + str(self.success_counter))
 		# print('number of records NOT successulf : ' + str(self.failed_counter))
 		# for i in self.failed_number:
 		# 	print('-------------------------')
 		# 	print(repr(i))
 		# 	print('-------------------------')
-		# with open("failed_files.txt", "a", newline='\n') as fp:
-		# 	for i in self.failed_file:
-		# 		#fp.write('---------------------------' + '\n')
-		# 		fp.write(i + '\n')
+		with open("failed_files.txt", "a", newline='\n') as fp:
+			for i in self.failed_file:
+				#fp.write('---------------------------' + '\n')
+				fp.write(i + '\n')
+		print('Script successfully ended')
 
 if __name__ == '__main__':
 	sql_class = Sql()
