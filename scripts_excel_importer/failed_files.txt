@@ -1,0 +1,12 @@
+FILE : 00620_3342 & 3409 & 3410.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 00640-0015 & 0016.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01001-5723 & 5724 imp & uni.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01001-6144 - 6145 & 6164.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01101-4828  CC 101049.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01109-0105.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01110-0900.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01110-5388.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01710-4905 CC 102468.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 01710-4951.xls ERROR CODE : 'NoneType' object has no attribute 'group' ERREUR : Part of file name with 7 numbers not found
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
