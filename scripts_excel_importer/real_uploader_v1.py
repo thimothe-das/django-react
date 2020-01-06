@@ -202,6 +202,6 @@ class Sql:
 if __name__ == '__main__':
 	sql_class = Sql()
 	sql_class.connectorwamp()
-	#sql_class.remove_hidden_rows()
+	sql_class.remove_hidden_rows()
 	sql_class.clean_data()
 	sql_class.ender()
