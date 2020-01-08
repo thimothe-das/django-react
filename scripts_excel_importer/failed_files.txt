@@ -1,0 +1,96 @@
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 1000836 (00620-4822).xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 2002022 (02070-0050) BAS.xlsx ERROR CODE : formatting_info=True not yet implemented ERREUR : Wrong file extension, should be xls (not xlxs)
+FILE : 00620_3342 & 3409 & 3410.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 00640-0015 & 0016.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-5723 & 5724 imp & uni.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01001-6144 - 6145 & 6164.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01101-4828  CC 101049.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01109-0105.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-0900.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01110-5388.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4905 CC 102468.xls ERREUR : Pas d'identifiant dans le nom du fichier
+FILE : 01710-4951.xls ERREUR : Pas d'identifiant dans le nom du fichier
